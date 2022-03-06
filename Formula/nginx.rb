@@ -46,20 +46,20 @@ class Nginx < Formula
       ld_opt = "-L#{pcre.opt_lib} -L#{openssl.opt_lib}"
 
       args = %W[
-        --prefix=#/usr/local/bin
-        --sbin-path=#/usr/local/sbin/nginx
+        --prefix="/usr/local/bin"
+        --sbin-path="/usr/local/sbin/nginx"
         --with-cc-opt=#{cc_opt}
         --with-ld-opt=#{ld_opt}
-        --conf-path=#/usr/local/ect/nginx/nginx.conf
-        --pid-path=#/usr/local/var/run/nginx.pid
-        --lock-path=#/usr/local/var/run/nginx.lock
-        --http-client-body-temp-path=#/usr/local/var/run/nginx/client_body_temp
-        --http-proxy-temp-path=#/usr/local/var/run/nginx/proxy_temp
-        --http-fastcgi-temp-path=#/usr/local/var/run/nginx/fastcgi_temp
-        --http-uwsgi-temp-path=#/usr/local/var/run/nginx/uwsgi_temp
-        --http-scgi-temp-path=#/usr/local/var/run/nginx/scgi_temp
-        --http-log-path=#/usr/local/var/log/nginx/access.log
-        --error-log-path=#/usr/local/var/log/nginx/error.log
+        --conf-path="/usr/local/ect/nginx/nginx.conf"
+        --pid-path="/usr/local/var/run/nginx.pid"
+        --lock-path="/usr/local/var/run/nginx.lock"
+        --http-client-body-temp-path="/usr/local/var/run/nginx/client_body_temp"
+        --http-proxy-temp-path="/usr/local/var/run/nginx/proxy_temp"
+        --http-fastcgi-temp-path="/usr/local/var/run/nginx/fastcgi_temp"
+        --http-uwsgi-temp-path="/usr/local/var/run/nginx/uwsgi_temp"
+        --http-scgi-temp-path="/usr/local/var/run/nginx/scgi_temp"
+        --http-log-path="/usr/local/var/log/nginx/access.log"
+        --error-log-path="/usr/local/var/log/nginx/error.log"
         --with-compat
         --with-debug
         --with-http_addition_module
@@ -134,10 +134,10 @@ class Nginx < Formula
 
     def caveats
       <<~EOS
-        Docroot is: #/usr/local/var/www
-        The default port has been set in #/usr/local/etc/nginx/nginx.conf to 8080 so that
+        Docroot is: /usr/local/var/www
+        The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
         nginx can run without sudo.
-        nginx will load all files in #/usr/local/ect/nginx/servers/.
+        nginx will load all files in /usr/local/ect/nginx/servers/.
       EOS
     end
 
